@@ -1,4 +1,5 @@
 import { Request, Response} from 'express';
+import { Products } from '../models/Product';
 
 
 export const  home = (req: Request, res: Response)=>{
@@ -11,17 +12,12 @@ export const  home = (req: Request, res: Response)=>{
     if(user.idade > 50){
         showOld = true
     }
+    let list = Products.getAll();
 
     res.render('pages/home', {
         user,
         showOld,
-        products: [
-            {title: 'camisolas', price: 38.50},
-            {title: 'Vestidos', price: 95.80},
-            {title: 'Calças', price: 42.30},
-            {title: 'Bermudas', price: 15.90},
-            {title: 'Saias', price: 18.20},
-        ],
+        products: list,
         frazesdoDIa: ['bom dia', 'boa tarde', 'boa noite']
         
     });

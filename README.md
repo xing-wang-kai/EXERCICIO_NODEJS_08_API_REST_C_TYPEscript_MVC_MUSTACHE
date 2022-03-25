@@ -198,11 +198,11 @@ e else do mustache ele traduz a função como um for ex.;
 
             {{#produtos}}
                 <p>{{titulo}} e R$ {{valor}}</p>
-            {{/protudos}}
+            {{/produtos}}
 
             {{^produtos}}
                 Nenhum produto encontrado.
-            {{/protudos}}
+            {{/produtos}}
 
 no exemplo acima será renderizado no mustache vária linhas p para
 cada um dos itens encontrados em produtos. caso não haja itens retorna o else

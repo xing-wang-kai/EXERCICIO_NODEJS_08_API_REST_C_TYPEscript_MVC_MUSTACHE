@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.home = void 0;
+const Product_1 = require("../models/Product");
 const home = (req, res) => {
     let user = {
         nome: "kai Wang",
@@ -10,16 +11,11 @@ const home = (req, res) => {
     if (user.idade > 50) {
         showOld = true;
     }
+    let list = Product_1.Products.getAll();
     res.render('pages/home', {
         user,
         showOld,
-        products: [
-            { title: 'camisolas', price: 38.50 },
-            { title: 'Vestidos', price: 95.80 },
-            { title: 'Calças', price: 42.30 },
-            { title: 'Bermudas', price: 15.90 },
-            { title: 'Saias', price: 18.20 },
-        ],
+        products: list,
         frazesdoDIa: ['bom dia', 'boa tarde', 'boa noite']
     });
 };
