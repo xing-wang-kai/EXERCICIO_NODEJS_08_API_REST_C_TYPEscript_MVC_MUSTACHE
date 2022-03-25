@@ -1,0 +1,17 @@
+{{>partials/header}}
+
+    <h2>QUAL A SUA IDADE ?? </h2>
+    
+    <form method="POST">
+        <label for="ano">Qual ano você nasceu?  </label><input type="number" name="ano"><br/><br/>
+        <input type="submit" value="Enviar" id="enviar" />
+    </form>
+   
+
+    {{#existIdade}}
+        <hr/>
+        Você possui {{idade}} anos.
+    {{/existIdade}}
+
+
+{{>partials/footer}}

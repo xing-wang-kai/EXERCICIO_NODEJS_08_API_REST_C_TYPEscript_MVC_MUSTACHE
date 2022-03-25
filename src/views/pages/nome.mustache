@@ -1,0 +1,15 @@
+{{>partials/header}}
+
+    <h2>Olá Informe os dados abaixo?? </h2>
+    <form method="GET">
+        <label for="nome">Qual seu nome?  </label><input type="text" placeholder="Digite Seu nome" name="nome"/><br/><br/>
+        <input type="submit" value="Enviar" id="enviar" />
+    </form>
+
+    {{#nome}} {{!Este é um comentário usando o Mustache}}
+        <hr>
+        Opa {{nome}}, tudo bem?
+    {{/nome}}
+
+
+{{>partials/footer}}

@@ -1,0 +1,25 @@
+{{>partials/header}}
+    <p class="paragrafos">OPA ACESSEI A HOME BEM VINDO {{ user.nome }} !!</p>
+    {{ #showOld }}
+        <p>Você é bem velho tem {{ user.idade }} </p>
+    {{ /showOld }}
+
+    <ul>
+        {{#products}}
+            <li>O produto: {{ title }} tem o preço R$ {{ price }} </li>
+        {{/products}}
+        {{^products}}
+            <p>Não existem produtos a serem exibidos</p>
+        {{/products}}
+    </ul>
+    <hr>
+    <ul>
+        {{#frazesdoDIa}}
+            <li>{{.}}</li>
+        {{/frazesdoDIa}}
+        {{^frazesdoDIa}}
+            <p>Não foi encontrados frazes do dia</p>
+        {{/frazesdoDIa}}
+    </ul>
+    
+{{>partials/footer}}
